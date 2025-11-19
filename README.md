@@ -10,6 +10,20 @@ in other peoples projects. Though for now, we're looking to get an application t
 
 ## Github access
 
+Feel free to use your personal git account for this, or make a new one.
+
+If your working on a feature, then create a branch called `feature/{name of feature}` 
+and add a link that branch to your ticket in trello
+
+Comments should be be short and informative 
+
+To get your work into main, you have to raise a pull request and get it reviewed by at least one 
+other team member
+
+Merges into main should be squash commits
+
+Don't delete your branch after merging
+
 ## Tasks
 
 If you're very excited to get started, or have already finished this README,
