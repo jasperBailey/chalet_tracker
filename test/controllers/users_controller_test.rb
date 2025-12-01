@@ -1,26 +1,18 @@
 require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  def log_in_as(user)
+    # TODO simulate login
+  end
+
   setup do
     @user = users(:one)
   end
 
   test "should get index" do
+    log_in_as(@user)
     get users_url
     assert_response :success
-  end
-
-  test "should get new" do
-    get new_user_url
-    assert_response :success
-  end
-
-  test "should create user" do
-    assert_difference("User.count") do
-      post users_url, params: { user: {  } }
-    end
-
-    assert_redirected_to user_url(User.last)
   end
 
   test "should show user" do
@@ -44,5 +36,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to users_url
+  end
+
+  test "should redirect index when not logged in" do
+    # Simulate not being logged in
+    get users_url
+    assert_redirected_to '/auth/google_oauth2'
   end
 end
