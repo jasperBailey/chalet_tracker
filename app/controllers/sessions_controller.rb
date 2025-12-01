@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# Controller handling user authentication sessions (login/logout).
 class SessionsController < ApplicationController
   def omniauth
-    auth = request.env["omniauth.auth"]
+    auth = request.env['omniauth.auth']
 
     render json: {
       provider: auth.provider,
